@@ -35,5 +35,19 @@
     "eslint-config-next": "15.2.2",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvarosdev0/Servant-Bible.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/alvarosdev0/Servant-Bible/issues"
+  },
+  "homepage": "https://github.com/alvarosdev0/Servant-Bible#readme"
 }
