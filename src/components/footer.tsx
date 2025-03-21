@@ -53,7 +53,7 @@ const Footer = () => {
           <strong className="text-4xl">
             <span className="italic">
               {`"Si ustedes se mantienen fieles a mi palabra, serán de veras mis
-              discípulos; conocerán la verdad, y la verdad los hará libres".{" "}`}
+              discípulos; conocerán la verdad, y la verdad los hará libres".`}
             </span>
           </strong>
           <strong className="text-right">Juan 8, 31-42</strong>
