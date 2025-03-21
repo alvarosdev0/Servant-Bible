@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-interface BibleVersesProps {}
-
 export function useGetBibleVerses(chapter: number, abrev: string) {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(true);

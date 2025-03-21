@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Separator } from "./ui/separator";
-import { Globe, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Instagram, Linkedin, Youtube } from "lucide-react";
 
 const dataFooter = [
   {
@@ -52,8 +52,8 @@ const Footer = () => {
           <strong className="text-2xl">SERVANT BIBLE</strong>
           <strong className="text-4xl">
             <span className="italic">
-              "Si ustedes se mantienen fieles a mi palabra, serán de veras mis
-              discípulos; conocerán la verdad, y la verdad los hará libres".{" "}
+              {`"Si ustedes se mantienen fieles a mi palabra, serán de veras mis
+              discípulos; conocerán la verdad, y la verdad los hará libres".{" "}`}
             </span>
           </strong>
           <strong className="text-right">Juan 8, 31-42</strong>

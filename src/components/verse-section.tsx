@@ -10,8 +10,8 @@ const VerseSection = () => {
           Versículo del día
         </strong>
         <p className="italic text-lg">
-          "Hijo mío, atiende a mis consejos; escucha atentamente lo que digo. No
-          pierdas de vista mis palabras; guárdalas muy dentro de tu corazón."
+          {`"Hijo mío, atiende a mis consejos; escucha atentamente lo que digo. No
+          pierdas de vista mis palabras; guárdalas muy dentro de tu corazón."`}
         </p>
         <strong className="text-1xl text-right">Proverbios 4:20-22</strong>
       </Card>

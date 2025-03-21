@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ResponseType } from "@/types/response";
+import { ResponseVersionsTypes } from "@/types/responses";
 import { VersionsType } from "@/types/versions";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -18,7 +18,7 @@ interface VersionsCarouselProps {
 
 const VersionsCarousel = (props: VersionsCarouselProps) => {
   const { selectedVersion, setVersion } = props;
-  const { loading, result }: ResponseType = useGetBibleVersions();
+  const { loading, result }: ResponseVersionsTypes = useGetBibleVersions();
   return (
     <Carousel
       plugins={[

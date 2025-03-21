@@ -11,12 +11,12 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import { BooksType } from "@/types/books";
-import { ResponseType } from "@/types/response";
 import { useGetBibleBooks } from "@/api/useGetBibleBooks";
 import Autoplay from "embla-carousel-autoplay";
+import { ResponseBooksTypes } from "@/types/responses";
 
 const HeroSearch = () => {
-  const { loading, result }: ResponseType = useGetBibleBooks();
+  const { loading, result }: ResponseBooksTypes = useGetBibleBooks();
 
   return (
     <div className="flex flex-col items-center justify-center gap-2 w-full ">

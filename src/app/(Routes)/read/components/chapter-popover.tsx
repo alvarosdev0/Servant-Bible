@@ -6,9 +6,9 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
-import { ResponseType } from "@/types/response";
+import { ResponseVersesTypes } from "@/types/responses";
 import { VersType } from "@/types/verses";
-import { Book, Eraser, Eye } from "lucide-react";
+import { Eraser, Eye } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -24,7 +24,7 @@ const ChapterPopover = (props: ChapterPopoverProps) => {
   const [bookURL, setBookURL] = useState(``);
   const router = useRouter();
 
-  const { loading, result }: ResponseType = useGetBibleVerses(
+  const { loading, result }: ResponseVersesTypes = useGetBibleVerses(
     chapter,
     book.abrev
   );
@@ -99,7 +99,7 @@ const ChapterPopover = (props: ChapterPopoverProps) => {
           </div>
           <div className="grid gap-2 grid-cols-3">
             {loading === false &&
-              result.vers.map((verse: VersType) => (
+              result?.vers.map((verse: VersType) => (
                 <Button
                   key={verse.id}
                   variant="default"
