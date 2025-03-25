@@ -10,13 +10,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
-import { BooksType } from "@/types/books";
-import { useGetBibleBooks } from "@/api/useGetBibleBooks";
 import Autoplay from "embla-carousel-autoplay";
-import { ResponseBooksTypes } from "@/types/responses";
+import { useBooks } from "@/hooks/useBooks";
+import SkeletonSchema from "./skeletonSchema";
 
 const HeroSearch = () => {
-  const { loading, result }: ResponseBooksTypes = useGetBibleBooks();
+  const { isLoading, isError, books } = useBooks();
 
   return (
     <div className="flex flex-col items-center justify-center gap-2 w-full ">
@@ -50,8 +49,30 @@ const HeroSearch = () => {
         >
           <CarouselPrevious className="cursor-pointer" />
           <CarouselContent>
-            {loading === false &&
-              result.map((book: BooksType) => (
+            {isLoading && isError === false && (
+              <>
+                <CarouselItem className="flex md:hidden gap-6">
+                  <SkeletonSchema
+                    grid={1}
+                    className="min-w-[24vw] min-h-[6.5vh] flex rounded-xl "
+                  />
+                </CarouselItem>
+                <CarouselItem className="hidden md:flex lg:hidden gap-6">
+                  <SkeletonSchema
+                    grid={1}
+                    className="min-w-[14.5em] p-2 min-h-[2.5em] flex rounded-xl "
+                  />
+                </CarouselItem>
+                <CarouselItem className="hidden lg:flex gap-6">
+                  <SkeletonSchema
+                    grid={3}
+                    className="min-w-[6.5em] min-h-[2em] flex rounded-xl "
+                  />
+                </CarouselItem>
+              </>
+            )}
+            {isLoading === false &&
+              books.map((book) => (
                 <CarouselItem
                   key={book.abrev}
                   className="md:basis-1xl lg:basis-1/3"

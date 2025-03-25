@@ -1,4 +1,4 @@
-export type VersionsType = {
+export type VersionType = {
   name: string;
   version: string;
   uri: string;

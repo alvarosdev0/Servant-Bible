@@ -1,9 +1,12 @@
 export type VersesType = {
-  testament: string;
-  name: string;
-  num_chapters: number;
-  chapter: number;
-  vers: [];
+  vers: [
+    {
+      verse: string;
+      number: number;
+      study: string;
+      id: number;
+    }
+  ];
 };
 
 export type VersType = {

@@ -4,7 +4,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { BooksType } from "@/types/books";
+import { BooksType } from "@/types/book";
 import ChapterPopover from "./chapter-popover";
 import { Separator } from "@/components/ui/separator";
 

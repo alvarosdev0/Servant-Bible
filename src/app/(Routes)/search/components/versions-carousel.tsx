@@ -1,4 +1,5 @@
 import { useGetBibleVersions } from "@/api/useGetBibleVersions";
+import SkeletonSchema from "@/components/skeletonSchema";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -7,8 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ResponseVersionsTypes } from "@/types/responses";
-import { VersionsType } from "@/types/versions";
+import { useVersions } from "@/hooks/useVersions";
 import Autoplay from "embla-carousel-autoplay";
 
 interface VersionsCarouselProps {
@@ -18,7 +18,7 @@ interface VersionsCarouselProps {
 
 const VersionsCarousel = (props: VersionsCarouselProps) => {
   const { selectedVersion, setVersion } = props;
-  const { loading, result }: ResponseVersionsTypes = useGetBibleVersions();
+  const { isLoading, isError, versions } = useVersions();
   return (
     <Carousel
       plugins={[
@@ -33,8 +33,22 @@ const VersionsCarousel = (props: VersionsCarouselProps) => {
     >
       <CarouselPrevious className="cursor-pointer" />
       <CarouselContent>
-        {loading === false &&
-          result.map((version: VersionsType) => (
+        {isLoading === true && (
+          <>
+            <CarouselItem className="flex gap-6 md:hidden py-1">
+              <SkeletonSchema grid={1} className="w-[27rem] h-[2rem]" />
+            </CarouselItem>
+
+            <CarouselItem className="hidden gap-6 md:flex lg:hidden py-1">
+              <SkeletonSchema grid={1} className="w-[37rem] h-[2rem]" />
+            </CarouselItem>
+            <CarouselItem className="hidden gap-6 lg:flex py-1">
+              <SkeletonSchema grid={2} className="w-[50rem] h-[2rem]" />
+            </CarouselItem>
+          </>
+        )}
+        {isLoading === false &&
+          versions.map((version) => (
             <CarouselItem
               key={version.name}
               className="md:basis-1xl lg:basis-60"
