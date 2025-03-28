@@ -58,7 +58,7 @@ const SearchHero = () => {
                     "{verse.verse}"
                   </strong>
                   <Link
-                    href={`/read/search/${
+                    href={`/search/${
                       version === undefined ? "rv1960" : version
                     }/${verse.book}/${verse.chapter}/${verse.number}`}
                   >

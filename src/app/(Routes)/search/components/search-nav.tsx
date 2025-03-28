@@ -1,9 +1,9 @@
 "use client";
 
 import { useQueryState } from "nuqs";
-import SearchBar from "../../components/search-bar";
-import VersionsCarousel from "../../components/versions-carousel";
 import { SearchNavBooks } from "./search-nav-books";
+import SearchBar from "../../read/components/search-bar";
+import VersionsCarousel from "../../read/components/versions-carousel";
 
 const SearchNav = () => {
   const [selectedVersion, setVersion] = useQueryState("version", {
