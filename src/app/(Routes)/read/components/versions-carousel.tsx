@@ -1,4 +1,3 @@
-import { useGetBibleVersions } from "@/api/useGetBibleVersions";
 import SkeletonSchema from "@/components/skeletonSchema";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,7 +12,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 interface VersionsCarouselProps {
   setVersion: (origin: string) => void;
-  selectedVersion: string;
+  selectedVersion?: string;
 }
 
 const VersionsCarousel = (props: VersionsCarouselProps) => {

@@ -1,4 +1,3 @@
-import { useGetBibleVerses } from "@/api/useGetBibleVerses";
 import { Button } from "@/components/ui/button";
 import {
   Popover,
@@ -28,19 +27,19 @@ const ChapterPopover = (props: ChapterPopoverProps) => {
   console.log(verses);
 
   const verseClick = (verse: number) => {
+    const urlStart = `${version}/${book.abrev}/${chapter}`;
     if (selectedVerses[0] === 0) {
-      setBookURL(`read/${version}/${book.abrev}/${chapter}/${verse}`);
+      setBookURL(`${urlStart}/${verse}`);
       setSelectedVerses([verse, 0]);
     } else if (selectedVerses[1] === 0 && verse > selectedVerses[0]) {
-      setBookURL(
-        `read/${version}/${book.abrev}/${chapter}/${selectedVerses[0]}-${verse}`
-      );
+      setBookURL(`${urlStart}/${selectedVerses[0]}-${verse}`);
       setSelectedVerses([selectedVerses[0], verse]);
     } else if (selectedVerses[0] !== 0 && selectedVerses[1] !== 0) {
-      setBookURL(`read/${version}/${book.abrev}/${chapter}/${verse}`);
+      setBookURL(`${urlStart}/${verse}`);
       setSelectedVerses([verse, 0]);
     }
   };
+
   const verseStrongText = () => {
     if (selectedVerses[0] === 0 && selectedVerses[1] === 0) {
       return `Leer capitulo desde el comienzo`;
@@ -50,6 +49,7 @@ const ChapterPopover = (props: ChapterPopoverProps) => {
       return `Leer versos ${selectedVerses[0]} - ${selectedVerses[1]}`;
     }
   };
+
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -72,8 +72,8 @@ const ChapterPopover = (props: ChapterPopoverProps) => {
                   onClick={() =>
                     router.push(
                       bookURL === ``
-                        ? `${version}//${book.abrev}/${chapter}`
-                        : bookURL
+                        ? `search/read/${version}/${book.abrev}/${chapter}`
+                        : `search/read/${bookURL}`
                     )
                   }
                   variant="outline"

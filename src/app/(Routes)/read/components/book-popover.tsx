@@ -4,12 +4,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { BooksType } from "@/types/book";
+import { BookType } from "@/types/book";
 import ChapterPopover from "./chapter-popover";
 import { Separator } from "@/components/ui/separator";
 
 interface BookProps {
-  book: BooksType;
+  book: BookType;
   version: string;
 }
 

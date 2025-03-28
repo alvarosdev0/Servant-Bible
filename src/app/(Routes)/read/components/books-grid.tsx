@@ -1,6 +1,4 @@
-import { useGetBibleBooks } from "@/api/useGetBibleBooks";
 import BookPopover from "./book-popover";
-import { ResponseBooksTypes } from "@/types/responses";
 import { useBooks } from "@/hooks/useBooks";
 import SkeletonSchema from "@/components/skeletonSchema";
 

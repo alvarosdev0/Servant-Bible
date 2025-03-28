@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/menu-nav-list";
 import Footer from "@/components/footer";
 import TankstackProvider from "@/components/providers/tankstackProvider";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,7 @@ export default function RootLayout({
       >
         <TankstackProvider>
           <NavBar />
-          {children}
+          <NuqsAdapter>{children}</NuqsAdapter>
           <Footer />
         </TankstackProvider>
       </body>

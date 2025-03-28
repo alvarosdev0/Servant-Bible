@@ -1,10 +1,10 @@
 import { fetchVerses } from "@/services/verses";
-import { VersesType } from "@/types/verses";
+import { VersType } from "@/types/vers";
 import { useQuery } from "@tanstack/react-query";
 
 export const useVerses = (abrev: string, chapter: number) => {
   const { isLoading, isError, data, refetch } = useQuery<{
-    verses: VersesType;
+    verses: VersType;
   }>({
     queryKey: ["verses"],
     queryFn: () => fetchVerses(abrev, chapter),
